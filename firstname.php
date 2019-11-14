@@ -1,9 +1,3 @@
-<!-- <?php
-    //$ID = $_POST['ID'];
-    //$pass = $_POST['pass'];
-    //echo $ID."  ".$pass;
-?> -->
-
 
 <?php
     /*
@@ -12,10 +6,10 @@
         ' ' this root has no password protection, hence empty
         my_db is db with which we want to connect
     */
-    $con = mysqli_connect('localhost','','','mydb') or die ('unable to connect');
+    $con = mysqli_connect('localhost','root','','mydb') or die ('unable to connect');
 
-    $ID = $_POST['ID'];
-    $pass = $_POST['pass'];
+    $ID = $_POST['firstname'];
+    $pass = $_POST['lastname'];
     $sql = "INSERT INTO 'my_table'('firstname','lastname') VALUES('$ID','$pass')";
     $result = mysqli_query($con,$sql);
     if($result) {
